@@ -2,7 +2,7 @@
 
 PNPM + Turborepo monorepo (stock `create-turbo` starter scaffold). Project vision: open-source practical family-education content/resources for parents coaching their own kids (家庭教育). All 100% TypeScript, React 19, Next.js 16.
 
-- apps/web — main Next.js app (port 3000)
+- apps/web — main Next.js app (port 3100)
 - apps/docs — Next.js docs app (port 3001)
 - packages/ui — `@repo/ui`, shared React component library
 - packages/eslint-config — `@repo/eslint-config` (base / next-js / react-internal)
@@ -38,6 +38,6 @@ There is NO test framework, no test scripts, and no `.github/` CI workflows anyw
 ## Pitfalls
 
 - **No tests configured** — commit/verify via `pnpm lint` + `pnpm check-types` + `pnpm build`.
-- **Dev ports are fixed**: web = 3000, docs = 3001. If one is busy, Next fails to start — check before assuming a broken build.
+- **Dev ports are fixed**: web = 3100, docs = 3001. If one is busy, Next fails to start — check before assuming a broken build.
 - `next build` on Next 16 generates `.next/` (gitignored) and runs `typegen`; a stale `next-env.d.ts` can mask type errors — rely on `check-types`.
 - README.md is still the generic Turborepo starter text, not a project doc; don't treat it as source of truth for conventions.

@@ -38,7 +38,7 @@ pnpm + Turborepo monorepo，全 TypeScript（strict），React 19 + Next.js 16�
 
 | 目录 | 说明 |
 | --- | --- |
-| `apps/web` | 主站（端口 3000） |
+| `apps/web` | 主站（端口 3100） |
 | `apps/docs` | 文档站（端口 3001） |
 | `packages/ui` | 共享组件库 `@repo/ui` |
 | `packages/eslint-config` | 共享 ESLint 配置 |
@@ -48,7 +48,7 @@ pnpm + Turborepo monorepo，全 TypeScript（strict），React 19 + Next.js 16�
 
 ```sh
 pnpm install     # 安装依赖
-pnpm dev         # 启动全部 dev server（web:3000 / docs:3001）
+pnpm dev         # 启动全部 dev server（web:3100 / docs:3001）
 pnpm --filter web dev   # 只跑 web
 ```
 
