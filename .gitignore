@@ -36,3 +36,6 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# skills CLI 符号链接目录（指向 .agents/skills，clone 后用 skills CLI 重建）
+.claude/skills
