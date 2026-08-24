@@ -54,6 +54,12 @@
       "sourceType": "local",
       "skillPath": "skills/pbl-feedback-iteration/SKILL.md",
       "computedHash": ""
+    },
+    "pbl-style-guide": {
+      "source": "local/custom",
+      "sourceType": "local",
+      "skillPath": "skills/pbl-style-guide/SKILL.md",
+      "computedHash": ""
     }
   }
 }

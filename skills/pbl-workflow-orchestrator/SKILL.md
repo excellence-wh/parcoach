@@ -41,13 +41,15 @@ Parcoach（亲导）项目的**主入口编排 skill**。它把「一个知识�
 - 交接物：阶段1的五项结论 + 用户对交付的要求。撰写遵循黄金标准 PBL（PBLWorks）。
 - 不重复教案撰写细节——细节实现归 `pbl-lesson-builder`。
 
-### 阶段 3 — 导出交付物（交给 pdf / pptx / html-ppt）
-教案定稿后，询问用户**想要哪种交付形态**，再调用对应 skill：
-- **文档型教案** → 调用 `pdf`（或项目内文档规范）导出为可打印/分享的文档
-- **演示型教案/上课用 PPT** → 调用 `pptx`（Office 风格）或 `html-ppt`（HTML 演示，含主题/动画，可用键盘翻页）
-- 用户选 html-ppt 时，优先复用其**全 deck 模板**（如 course-module、tech-sharing）承载教案内容。
+### 阶段 3 — 导出交付物（交给 pdf / pptx / html-ppt，遵循 pbl-style-guide）
+教案定稿后，询问用户**想要哪种交付形态**，再调用对应 skill。**无论选哪种，都必须遵循 `pbl-style-guide` 规范**，保证视觉与模板统一：
+- **文档型教案** → 调用 `pdf`（或项目内文档规范）导出；用品牌 token（forest green #3E7C59 / 暖橙 #E8A13C）配色
+- **演示型教案/上课用 PPT** → 调用 `pptx`（Office 风格）或 `html-ppt`（HTML 演示）
+  - **html-ppt 强制**：引入 `styles/parcoach-theme.css` 作为唯一主题，**禁止**选用 html-ppt 自身的其它 36 个主题；优先复用其全 deck 模板承载教案，但 token 覆盖为品牌色
+  - 三套（文档/html/pptx）的配色、字体、每节课卡片布局保持一致
+- 若用户要其它（如 xlsx 评价表），也套用品牌 token。
 
-导出前确认：格式是否与教案内容匹配、是否含封面/目录/评价表、文件名合理。交出文件路径并说明打开方式。
+导出前确认：遵循 `pbl-style-guide` 的固定页面顺序（封面→目标→概览→每节课→Rubric→适配→扩展）、每节课三问固定格式、且文件路径/命名合理。交出文件路径并说明打开方式。
 
 ### 阶段 4 — 反馈迭代（交给 pbl-feedback-iteration）
 交付后启动 `pbl-feedback-iteration`：收集反馈 → 归因到对应阶段 → 回到该阶段精准修订（不改整份）→ 再确认。反馈归因表（澄清问题→阶段1、教案设计→阶段2、导出格式→阶段3）也由其负责。
