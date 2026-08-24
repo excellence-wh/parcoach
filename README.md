@@ -1,159 +1,67 @@
-# Turborepo starter
+# Parcoach ｜ 亲导
 
-This Turborepo starter is maintained by the Turborepo core team.
+> 赋能普通家长，做孩子的家庭成长教练
+> Empower parents to be their kid's coach at home.
+> Open-source practical family-education resources for every family.
 
-## Using this example
+## 项目定位
 
-Run the following command:
+Parcoach（亲导）是面向普通家庭的开源教育项目。
+**不需要专业教师背景，普通家长就可以在家引导、教育自己的孩子。**
 
-```sh
-npx create-turbo@latest
-```
+本项目不服务培训机构，全部内容面向父母：提供可直接落地的引导方法、亲子教案、练习素材、习惯培养方案、避坑经验。
 
-## What's inside?
+### 核心愿景
 
-This Turborepo includes the following packages/apps:
+每一位家长，都可以成为孩子的私人成长教练。
 
-### Apps and Packages
+## 内容方向
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- 家庭教育实操方法论
+- 家长可直接上手的家庭教学方案
+- 亲子互动练习、小任务素材
+- 常见育儿踩坑与避坑指南
+- 家庭启蒙思路（思维、习惯、认知）
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## 使用说明
 
-### Utilities
+本项目所有资源供家庭免费使用。
 
-This Turborepo has some additional tools already setup for you:
+## 参与贡献
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+欢迎家长、教育爱好者一起共建，提交实践经验、改进方案。
 
-### Build
+## 技术栈 / 仓库
 
-To build all apps and packages, run the following command:
+pnpm + Turborepo monorepo，全 TypeScript（strict），React 19 + Next.js 16。
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+| 目录 | 说明 |
+| --- | --- |
+| `apps/web` | 主站（端口 3000） |
+| `apps/docs` | 文档站（端口 3001） |
+| `packages/ui` | 共享组件库 `@repo/ui` |
+| `packages/eslint-config` | 共享 ESLint 配置 |
+| `packages/typescript-config` | 共享 TS 配置 |
 
-```sh
-cd my-turborepo
-turbo build
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo build
-pnpm dlx turbo build
-pnpm exec turbo build
-```
-
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+### 本地开发
 
 ```sh
-turbo build --filter=docs
+pnpm install     # 安装依赖
+pnpm dev         # 启动全部 dev server（web:3000 / docs:3001）
+pnpm --filter web dev   # 只跑 web
 ```
 
-Without global `turbo`:
+### 构建 / 校验
 
 ```sh
-npx turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+pnpm build         # 构建全部
+pnpm lint          # ESLint（warnings 视为失败）
+pnpm check-types   # tsc --noEmit
+pnpm format        # Prettier 格式化
 ```
 
-### Develop
+> 注：仓库当前为初始骨架（create-turbo），尚未包含具体业务代码；`pnpm-lock.yaml` 为提交产物，请用 `pnpm` 而非 `npm`/`yarn` 管理依赖。
 
-To develop all apps and packages, run the following command:
+## License
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo dev
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo dev
-pnpm exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo dev --filter=web
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-pnpm exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-pnpm exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+本项目所有资源供家庭免费使用，详见仓库内 License 文件。
