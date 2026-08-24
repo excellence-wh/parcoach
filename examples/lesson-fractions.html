@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>分数 — PBL 教案 · Parcoach</title>
+<link rel="stylesheet" href="../.agents/skills/html-ppt/assets/base.css">
+<link rel="stylesheet" href="../styles/parcoach-theme.css">
+<style>
+  /* 教案统一版式：遵守 pbl-style-guide，仅用品牌 token
+     与 examples/lesson-photosynthesis.html 完全相同，保证跨教案统一 */
+  body{background:var(--bg);color:var(--text-1);font-family:var(--font-sans);line-height:1.7;}
+  .sheet{max-width:880px;margin:0 auto;padding:56px 64px 80px;}
+  h1{font-family:var(--font-display);font-size:42px;color:var(--text-1);margin:0 0 8px;}
+  h2{font-family:var(--font-display);font-size:30px;color:var(--accent);margin:44px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+  h3{font-family:var(--font-display);font-size:22px;color:var(--text-1);margin:28px 0 10px;}
+  .cover{background:var(--grad-soft);border-radius:var(--radius-lg);padding:44px 48px;margin-bottom:8px;}
+  .cover h1{font-size:40px;}
+  .subtitle{color:var(--text-2);font-size:18px;margin:4px 0 18px;}
+  .tags{display:flex;gap:10px;flex-wrap:wrap;}
+  .tag{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--text-2);}
+  .dq{background:var(--bg-soft);border-left:5px solid var(--accent-2);border-radius:var(--radius-sm);padding:18px 22px;margin:20px 0;font-size:19px;color:var(--text-1);}
+  .dq b{color:var(--accent-2);}
+  .lesson{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin:20px 0;box-shadow:var(--shadow);}
+  .meta{font-size:14px;color:var(--text-2);margin:6px 0 14px;}
+  .q{display:flex;gap:10px;align-items:flex-start;margin:7px 0;}
+  .q .ic{font-weight:700;min-width:22px;}
+  .q-pre .ic{color:var(--accent);} .q-pre{color:var(--text-2);}
+  .q-mid .ic{color:var(--accent-2);} .q-mid{color:var(--text-2);}
+  .q-post .ic{color:var(--accent-3);} .q-post{color:var(--text-2);}
+  .qlabel{font-weight:700;margin:10px 0 2px;}
+  .q-pre .qlabel{color:var(--accent);} .q-mid .qlabel{color:var(--accent-2);} .q-post .qlabel{color:var(--accent-3);}
+  .rule{width:100%;border-collapse:collapse;margin:14px 0;}
+  .rule th{background:var(--bg-soft);color:var(--text-1);}
+  .rule th,.rule td{border:1px solid var(--border);padding:10px 14px;font-size:15px;text-align:left;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .box{background:var(--bg-soft);border-radius:var(--radius-sm);padding:16px 20px;}
+  .box h4{margin:0 0 6px;color:var(--accent);}
+  .muted{color:var(--text-2);} .small{font-size:14px;}
+  ul,ol{padding-left:22px;color:var(--text-1);} li{margin:4px 0;}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- 封面 -->
+  <div class="cover">
+    <p class="eyebrow" style="color:var(--accent);margin:0 0 6px;">PARCOACH · PBL 教案</p>
+    <h1>分数：开一家「公平甜品店」</h1>
+    <p class="subtitle">分数不是抽象的几分之几——孩子当老板，把蛋糕公平分给客人，真正弄懂分数。</p>
+    <div class="tags"><span class="tag">3 节课</span><span class="tag">7–9 岁</span><span class="tag">家庭 / 课堂</span></div>
+  </div>
+
+  <div class="dq"><b>驱动问题：</b>「如果一块蛋糕要分给 4 个客人，怎样分才算『公平』？我们怎样开一家能公平分餐的甜品店？」</div>
+
+  <!-- 学习目标 -->
+  <h2>学习目标</h2>
+  <div class="split">
+    <div class="box"><h4>知识</h4><p class="small muted">理解分数的含义：整体被平均分成几份、取其中的几份；认识分子分母。</p></div>
+    <div class="box"><h4>能力</h4><p class="small muted">实际操作平均分、比较同分母分数大小、用实物和图画表达分数。</p></div>
+    <div class="box"><h4>情感</h4><p class="small muted">体会"公平"的数学意义，愿意动手试错，敢于表达自己的分法。</p></div>
+  </div>
+
+  <!-- 每节课 -->
+  <h2>每节课（含三问）</h2>
+
+  <div class="lesson">
+    <h3 style="margin-top:0;">第 1 节 · 感知：什么叫「平均分」？</h3>
+    <p class="meta">阶段目标：建立"整体平均分成几份"的直觉 · 材料：彩纸、剪刀、一块真的蛋糕模型（或橡皮泥）</p>
+    <div class="q q-pre"><span class="ic">🎯</span><div><div class="qlabel">课前启发</div><div>把一块披萨平均分给 3 个人，每个人得到的是一样多吗？你怎么知道？</div></div></div>
+    <div class="q q-mid"><span class="ic">💡</span><div><div class="qlabel">课中引导</div><div>如果切成两块一大一小，还算"平均"吗？为什么平均分那么重要？</div></div></div>
+    <div class="q q-post"><span class="ic">✅</span><div><div class="qlabel">课后小结</div><div>今天你用什么办法保证"一样多"？</div></div></div>
+  </div>
+
+  <div class="lesson">
+    <h3 style="margin-top:0;">第 2 节 · 表示：把分数写出来</h3>
+    <p class="meta">阶段目标：认识分子分母，能把"分的结果"用分数表示 · 材料：纸盘、记号笔、彩纸</p>
+    <div class="q q-pre"><span class="ic">🎯</span><div><div class="qlabel">课前启发</div><div>如果想告诉别人"一块蛋糕分成 4 份、拿走 3 份"，有哪几种说法？</div></div></div>
+    <div class="q q-mid"><span class="ic">💡</span><div><div class="qlabel">课中引导</div><div>分母和分子各代表什么？为什么"拿走的份数"写在上面？</div></div></div>
+    <div class="q q-post"><span class="ic">✅</span><div><div class="qlabel">课后小结</div><div>3/4 里，哪个数是"分成了几份"，哪个是"拿了几份"？</div></div></div>
+  </div>
+
+  <div class="lesson">
+    <h3 style="margin-top:0;">第 3 节 · 应用：开张甜品店，公平分餐</h3>
+    <p class="meta">阶段目标：综合运用分数解决"公平分餐"问题并展示 · 材料：纸盘、彩笔、卡片</p>
+    <div class="q q-pre"><span class="ic">🎯</span><div><div class="qlabel">课前启发</div><div>店里来了 4 个客人，只有 1 块蛋糕，怎么让每个客人都满意？</div></div></div>
+    <div class="q q-mid"><span class="ic">💡</span><div><div class="qlabel">课中引导</div><div>这里用到了哪个分数？客人再多一个（5 个）呢？</div></div></div>
+    <div class="q q-post"><span class="ic">✅</span><div><div class="qlabel">课后小结</div><div>今天你用分数解决了什么真问题？还有哪里能用到分数？</div></div></div>
+  </div>
+
+  <!-- Rubric -->
+  <h2>评价 Rubric</h2>
+  <table class="rule">
+    <tr><th>维度</th><th>优</th><th>良</th><th>待改进</th></tr>
+    <tr><td>理解</td><td>能说清平均分与分子分母</td><td>能在提示下说出含义</td><td>分不清分子分母</td></tr>
+    <tr><td>操作</td><td>能独立平均分并写分数</td><td>能跟着步骤完成</td><td>需大量帮助</td></tr>
+    <tr><td>应用</td><td>能把分数用于真实问题</td><td>能在引导下应用</td><td>仅会机械写分数</td></tr>
+  </table>
+
+  <!-- 适配 -->
+  <h2>家庭 / 课堂适配</h2>
+  <div class="split">
+    <div class="box"><h4>家庭</h4><p class="small muted">亲子模拟"甜品店"角色扮演；用真实蛋糕/披萨盒；材料家里都有。</p></div>
+    <div class="box"><h4>课堂</h4><p class="small muted">分组各开一个"甜品店"互相点单；3 节各 40 分钟；第 3 节公开展示。</p></div>
+  </div>
+
+  <!-- 扩展 -->
+  <h2>扩展与下一步</h2>
+  <ul><li>比较分数大小：1/2 和 1/3 谁大？（进阶）</li><li>做一个"分数披萨"手工，贴满厨房</li><li>调查生活里的分数：时钟、食谱、体育比分</li></ul>
+
+</div>
+</body>
+</html>

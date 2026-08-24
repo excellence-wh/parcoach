@@ -1,14 +1,85 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "tailwindcss";
+
+/* Tailwind v4 source 扫描范围：显式声明，确保 monorepo 下工具类正确生成 */
+@source "./app/**/*.{ts,tsx}";
+@source "./components/**/*.{ts,tsx}";
+@source "./lib/**/*.{ts,tsx}";
+@source "../../packages/ui/src/**/*.{ts,tsx}";
+
+/* ===== shadcn/ui + Tailwind v4 主题（语义色 token） =====
+   把品牌 CSS 变量映射为 Tailwind 颜色，使 bg-primary、text-muted-foreground
+   等 shadcn 语义色工具类能够生成。必须用 @theme inline（引用 :root 变量）。 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* —— Parcoach 品牌 token —— 森林绿 #3E7C59 + 暖橙 #E8A13C + 浅绿 #7FA88C */
+  --bg: #ffffff;
+  --bg-soft: #f7f4ef;
+  --surface: #ffffff;
+  --surface-2: #f1ece3;
+  --border: rgba(88, 105, 90, 0.14);
+  --border-strong: rgba(88, 105, 90, 0.26);
+  --text-1: #2e3a32;
+  --text-2: #5e6b62;
+  --text-3: #8a948c;
+  --accent-brand: #3e7c59;
+  --accent-2: #e8a13c;
+  --accent-3: #7fa88c;
+  --grad: linear-gradient(135deg, #3e7c59, #7fa88c 55%, #e8a13c);
+  --grad-soft: linear-gradient(135deg, #eef4ef, #fbf4e8);
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", Georgia, serif;
+
+  /* —— shadcn/ui CSS 变量（映射到品牌色）—— */
+  --radius: 0.5rem;
+  --background: #ffffff;
+  --foreground: #2e3a32;
+  --card: #ffffff;
+  --card-foreground: #2e3a32;
+  --popover: #ffffff;
+  --popover-foreground: #2e3a32;
+  --primary: #3e7c59;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f4ef;
+  --secondary-foreground: #2e3a32;
+  --muted: #f7f4ef;
+  --muted-foreground: #5e6b62;
+  --accent: #eef4ef;
+  --accent-foreground: #2e3a32;
+  --destructive: #c0564a;
+  --destructive-foreground: #ffffff;
+  --border: rgba(88, 105, 90, 0.14);
+  --input: rgba(88, 105, 90, 0.22);
+  --ring: #3e7c59;
 }
+
+/* 注意：不做全局 * { padding:0; margin:0 } —— Tailwind Preflight 已在
+   @layer base 提供重置；手写未分层 reset 会因「未分层>@layer」优先级
+   覆盖掉 shadcn 组件里的 px-6 等内边距类，导致文字贴边。 */
 
 html,
 body {
@@ -19,12 +90,9 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -32,19 +100,15 @@ a {
   text-decoration: none;
 }
 
-.imgDark {
-  display: none;
+h1, h2, h3, .serif {
+  font-family: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  .imgLight {
-    display: none;
-  }
-  .imgDark {
-    display: unset;
-  }
-}
+/* 排版工具类 */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.section { padding: 72px 0; }
+.section-alt { background: var(--bg-soft); }
+.eyebrow { color: var(--accent-brand); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.h2 { font-size: 34px; color: var(--text-1); margin-bottom: 12px; }
+.sub { color: var(--text-2); font-size: 17px; max-width: 640px; }
+.muted { color: var(--text-2); }
