@@ -12,11 +12,15 @@ import {
   CheckCircle2,
   Palette,
   PlayCircle,
+  UploadCloud,
+  ListChecks,
+  Layers,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { lessons } from "@/lib/lessons";
 
 const skills = [
   {
@@ -34,7 +38,7 @@ const skills = [
   {
     stage: "阶段 2 · 生成教案",
     name: "pbl-lesson-builder",
-    desc: "基于盘对结果生成 8 模块 PBL 教案，每节课含三问。",
+    desc: "基于盘对结果生成自包含纯 HTML 教案，含 10+ 交互题。",
     icon: BookOpen,
   },
   {
@@ -57,10 +61,7 @@ const skills = [
   },
 ];
 
-const lessons = [
-  { title: "光合作用：打造「能量管家」", age: "9–11 岁", path: "/lessons/photosynthesis", tag: "科学" },
-  { title: "分数：开一家「公平甜品店」", age: "7–9 岁", path: "/lessons/fractions", tag: "数学" },
-];
+const lessonCount = lessons.length;
 
 export default function Home() {
   return (
@@ -75,9 +76,10 @@ export default function Home() {
             <span className="font-serif text-lg font-semibold">Parcoach 亲导</span>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+            <a href="#library" className="hover:text-foreground transition-colors">教案仓库</a>
             <a href="#skills" className="hover:text-foreground transition-colors">Skills 体系</a>
-            <a href="#lessons" className="hover:text-foreground transition-colors">教案仓库</a>
             <a href="#workflow" className="hover:text-foreground transition-colors">工作流</a>
+            <Link href="/upload" className="hover:text-foreground transition-colors">上传教案</Link>
             <a href="#about" className="hover:text-foreground transition-colors">关于</a>
           </nav>
           <Button asChild size="sm">
@@ -192,62 +194,79 @@ export default function Home() {
       </section>
 
       {/* 教案仓库 */}
-      <section id="lessons" className="section">
+      <section id="library" className="section">
         <div className="container">
           <p className="eyebrow">LESSON LIBRARY</p>
-          <h2 className="h2">教案仓库</h2>
-          <p className="sub">
-            已按统一规范生成的示例教案，全都套用品牌主题，打开即用、风格统一。
-          </p>
-
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {/* 示例教案 */}
-            <Card className="overflow-hidden border-border/70">
-              <CardHeader className="pb-3">
-                <div className="mb-2 flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg text-white" style={{ background: "var(--grad)" }}>
-                    <BookOpen className="size-5" />
-                  </div>
-                  <Badge variant="secondary">示例教案</Badge>
-                </div>
-                {lessons.map((l) => (
-                  <Card key={l.title} className="mt-3">
-                    <CardContent className="flex items-center justify-between p-4">
-                      <div>
-                        <p className="font-medium">{l.title}</p>
-                        <p className="text-sm text-muted-foreground">{l.age} · <Badge variant="outline" className="ml-1">{l.tag}</Badge></p>
-                      </div>
-                      <Link href={l.path} className="text-primary hover:underline">
-                        <FileText className="size-5" />
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-              </CardHeader>
-            </Card>
-
-            {/* 统一规范 */}
-            <Card className="overflow-hidden border-border/70">
-              <CardHeader>
-                <div className="mb-2 flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-accent-foreground/5 text-primary">
-                    <CheckCircle2 className="size-5" />
-                  </div>
-                  <Badge variant="secondary">统一规范</Badge>
-                </div>
-                <CardTitle className="text-lg">享受多快好省</CardTitle>
-                <CardDescription>
-                  所有教案共享同一套品牌模板——森林绿 + 暖橙、衬线标题、
-                  固定的每节课卡片与三问版式。任何知识点生成的结果，视觉都保持一致。
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2"><Palette className="size-4 text-primary" /> 品牌 token 锁死配色与字体</div>
-                <div className="flex items-center gap-2"><Wand2 className="size-4 text-primary" /> 每节课三问固定格式</div>
-                <div className="flex items-center gap-2"><PlayCircle className="size-4 text-primary" /> 一键导出文档 / PPT / 演示</div>
-              </CardContent>
-            </Card>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="h2">教案仓库</h2>
+              <p className="sub">
+                目前收录 <strong className="text-primary">{lessonCount}</strong> 份由 skills 生成的自包含纯 HTML 教案，
+                每份内含至少 10 道交互式题目，双击即用、可离线使用。
+              </p>
+            </div>
+            <Button asChild size="lg" className="gap-2">
+              <Link href="/upload">
+                <UploadCloud className="size-4" /> 上传教案
+              </Link>
+            </Button>
           </div>
+
+          {/* 教案卡片网格 */}
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {lessons.map((l) => (
+              <Link key={l.slug} href={`/lessons/${l.slug}`} className="group">
+                <Card className="h-full overflow-hidden border-border/70 transition-shadow hover:shadow-md">
+                  <CardHeader className="pb-3">
+                    <div className="mb-2 flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg text-white" style={{ background: "var(--grad)" }}>
+                        <Layers className="size-5" />
+                      </div>
+                      <Badge variant="secondary">{l.tag}</Badge>
+                    </div>
+                    <CardTitle className="group-hover:text-primary transition-colors">{l.title}</CardTitle>
+                    <CardDescription>{l.subtitle}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline">{l.age}</Badge>
+                      <Badge variant="outline">{l.lessons} 节课</Badge>
+                      <Badge variant="outline">{l.scene}</Badge>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <ListChecks className="size-4 text-primary" />
+                      {l.questionCount} 道交互式题目
+                      <ArrowRight className="ml-auto size-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          {/* 统一规范说明 */}
+          <Card className="mt-8 overflow-hidden border-border/70">
+            <CardHeader>
+              <div className="mb-2 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-lg bg-accent-foreground/5 text-primary">
+                  <CheckCircle2 className="size-5" />
+                </div>
+                <Badge variant="secondary">统一规范</Badge>
+              </div>
+              <CardTitle className="text-lg">所有教案共享同一套品牌模板</CardTitle>
+              <CardDescription>
+                森林绿 + 暖橙、衬线标题、固定的每节课卡片与三问版式。由
+                <code className="mx-1 rounded bg-muted px-1">pbl-lesson-builder</code> + 统一模板生成的教案，
+                无论谁生成、无论知识点是什么，视觉与交互逻辑都保持一致。
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2"><Palette className="size-4 text-primary" /> 品牌 token 锁死配色与字体</div>
+              <div className="flex items-center gap-2"><Wand2 className="size-4 text-primary" /> 每节课三问固定格式</div>
+              <div className="flex items-center gap-2"><ListChecks className="size-4 text-primary" /> 至少 10 道交互式题目，点击即反馈</div>
+              <div className="flex items-center gap-2"><PlayCircle className="size-4 text-primary" /> 自包含纯 HTML，双击即用、可离线分发</div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
