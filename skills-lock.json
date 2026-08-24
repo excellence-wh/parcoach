@@ -30,6 +30,30 @@
       "sourceType": "github",
       "skillPath": "skills/web-design-guidelines/SKILL.md",
       "computedHash": "d8e7d3afe37dcc8a97b99ffb5afdb4d0919ae0092ea8b68f44eb201f035e33ac"
+    },
+    "knowledge-point-clarifier": {
+      "source": "local/custom",
+      "sourceType": "local",
+      "skillPath": "skills/knowledge-point-clarifier/SKILL.md",
+      "computedHash": ""
+    },
+    "pbl-workflow-orchestrator": {
+      "source": "local/custom",
+      "sourceType": "local",
+      "skillPath": "skills/pbl-workflow-orchestrator/SKILL.md",
+      "computedHash": ""
+    },
+    "pbl-lesson-builder": {
+      "source": "local/custom",
+      "sourceType": "local",
+      "skillPath": "skills/pbl-lesson-builder/SKILL.md",
+      "computedHash": ""
+    },
+    "pbl-feedback-iteration": {
+      "source": "local/custom",
+      "sourceType": "local",
+      "skillPath": "skills/pbl-feedback-iteration/SKILL.md",
+      "computedHash": ""
     }
   }
 }
