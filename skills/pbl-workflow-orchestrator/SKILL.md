@@ -1,6 +1,6 @@
 ---
 name: pbl-workflow-orchestrator
-description: 编排 Parcoach（亲导）项目端到端执行流程 —— 从知识点到可交付的 PBL 教案文档/PPT。Use as the entry orchestrator when a parent or teacher brings a knowledge point (知识点) / 主题 and wants the full pipeline run. Pipeline: ① 澄清盘对知识点（knowledge-point-clarifier）→ ② 生成 PBL 教案 → ③ 导出交付物（pdf / pptx / html-ppt）。Triggers: "生成一套 PBL 教案", "帮我按流程做一份教案", "从知识点到 PPT 全流程", "orchestrate / 编排 / 走全流程". Delegates to sibling skills; does not re-implement what they already own.
+description: '编排 Parcoach（亲导）项目端到端执行流程 —— 从知识点到可交付的 PBL 教案文档/PPT。Use as the entry orchestrator when a parent or teacher brings a knowledge point (知识点) / 主题 and wants the full pipeline run. Pipeline: ① 澄清盘对知识点（knowledge-point-clarifier）→ ② 生成 PBL 教案 → ③ 导出交付物（pdf / pptx / html-ppt）。Triggers: "生成一套 PBL 教案", "帮我按流程做一份教案", "从知识点到 PPT 全流程", "orchestrate / 编排 / 走全流程". Delegates to sibling skills; does not re-implement what they already own.'
 ---
 
 # PBL 工作流编排器（Parcoach Workflow Orchestrator）

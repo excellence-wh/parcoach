@@ -1,6 +1,6 @@
 ---
 name: pbl-lesson-builder
-description: 生成 PBL（项目式学习）教案 —— 编排流水线的阶段2。基于已澄清盘对的知识点交接物，撰写一份可直接落地的 PBL 教案。Use AFTER clarification (knowledge-point-clarifier) when the knowledge point is aligned; NOT a replacement for clarifying. Input handoff: 定义/边界/对象/行为化学习目标/约束 五项. Triggers: "生成教案", "写 PBL 教案", "做一份教学方案", "产出教案". Produces an 8-module ready-to-use PBL lesson plan for parents/teachers.
+description: '生成 PBL（项目式学习）教案 —— 编排流水线的阶段2。基于已澄清盘对的知识点交接物，撰写一份可直接落地的 PBL 教案。Use AFTER clarification (knowledge-point-clarifier) when the knowledge point is aligned; NOT a replacement for clarifying. Input handoff: 定义/边界/对象/行为化学习目标/约束 五项. Triggers: "生成教案", "写 PBL 教案", "做一份教学方案", "产出教案". Produces an 8-module ready-to-use PBL lesson plan for parents/teachers.'
 ---
 
 # PBL 教案生成器（PBL Lesson Builder）

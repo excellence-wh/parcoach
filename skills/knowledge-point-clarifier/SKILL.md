@@ -1,6 +1,6 @@
 ---
 name: knowledge-point-clarifier
-description: 澄清与对齐知识点（只做 clarify，不生成教案）。Use when a parent or teacher inputs a knowledge point (知识点) / 主题 / 学习目标 and needs help getting it clear and aligned before teaching — what it really means, its boundaries, and what the child should actually master. Triggers: "帮我厘清这个知识点", "这个知识点到底要学什么", "知识点盘对", "align this knowledge point", "clarify". The skill ONLY asks clarifying questions and aligns the knowledge point; it does NOT generate a full PBL lesson plan.
+description: '澄清与对齐知识点（只做 clarify，不生成教案）。Use when a parent or teacher inputs a knowledge point (知识点) / 主题 / 学习目标 and needs help getting it clear and aligned before teaching — what it really means, its boundaries, and what the child should actually master. Triggers: "帮我厘清这个知识点", "这个知识点到底要学什么", "知识点盘对", "align this knowledge point", "clarify". The skill ONLY asks clarifying questions and aligns the knowledge point; it does NOT generate a full PBL lesson plan.'
 ---
 
 # 知识点澄清器（Knowledge-Point Clarifier）

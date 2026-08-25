@@ -1,6 +1,6 @@
 ---
 name: pbl-feedback-iteration
-description: PBL 教案/交付物交付后的反馈与迭代 —— 编排流水线的阶段4。收集老师/家长对教案或导出文件的反馈，定位需要改的地方，决定回到哪个阶段修订。Use AFTER a lesson plan (pbl-lesson-builder) or deliverable (pdf/pptx/html-ppt) is produced and the user gives feedback. Triggers: "不满意", "改一下", "再调整", "孩子进度不对", "太简单/太难", "换格式", "重新做". Routes feedback to the correct earlier stage; does NOT silently regenerate.
+description: 'PBL 教案/交付物交付后的反馈与迭代 —— 编排流水线的阶段4。收集老师/家长对教案或导出文件的反馈，定位需要改的地方，决定回到哪个阶段修订。Use AFTER a lesson plan (pbl-lesson-builder) or deliverable (pdf/pptx/html-ppt) is produced and the user gives feedback. Triggers: "不满意", "改一下", "再调整", "孩子进度不对", "太简单/太难", "换格式", "重新做". Routes feedback to the correct earlier stage; does NOT silently regenerate.'
 ---
 
 # 反馈迭代器（PBL Feedback & Iteration）

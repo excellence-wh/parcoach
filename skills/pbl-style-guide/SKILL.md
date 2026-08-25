@@ -1,6 +1,6 @@
 ---
 name: pbl-style-guide
-description: Parcoach 教案统一输出规范 —— 锁死品牌主题、版式 token 与内容→版式映射。保证所有生成的 PBL 教案（文档/PPT/HTML）视觉与模板统一。被 pbl-lesson-builder（生成内容）与 pbl-workflow-orchestrator（导出阶段）共同引用。Use whenever producing or exporting any Parcoach lesson plan / 教案 deliverable — enforce the fixed brand theme, tokens, and layout mapping. Triggers: "统一", "模板统一", "UI 统一", "按规范输出", "brand", "style guide".
+description: 'Parcoach 教案统一输出规范 —— 锁死品牌主题、版式 token 与内容→版式映射。保证所有生成的 PBL 教案（文档/PPT/HTML）视觉与模板统一。被 pbl-lesson-builder（生成内容）与 pbl-workflow-orchestrator（导出阶段）共同引用。Use whenever producing or exporting any Parcoach lesson plan / 教案 deliverable — enforce the fixed brand theme, tokens, and layout mapping. Triggers: "统一", "模板统一", "UI 统一", "按规范输出", "brand", "style guide".'
 ---
 
 # Parcoach 教案统一输出规范（Style Guide）
